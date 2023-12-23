@@ -1,0 +1,2 @@
+idx,name,id,password,phone,address,email
+1,은진,admin,admin,01068946645,심곡동,eunjini6645@gmail.com
