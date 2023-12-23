@@ -334,7 +334,7 @@ public class Dart {
 			boolean isRun = true;
 			boolean isNot = false;
 			
-			System.out.println("기록을 등재하고 싶은 유저의 번호을 모두 적어주세요(번호는 스페이스 없이 한 줄에 모두 입력해주세요.");
+			System.out.println("기록을 등재하고 싶은 유저의 번호을 모두 적어주세요(번호는 스페이스 없이 한 줄에 모두 입력해주세요.)");
 			
 			while(isRun) {
 				for(int i=0; i<info.numPlayers; i++)

@@ -19,8 +19,8 @@ public class DartGame {
 		
 //		--- 인트로 ----------------------------
 		
-//		dart.dartArt();
-//		dart.intro();
+		dart.dartArt();
+		dart.intro();
 		
 //		--- 게임 진행 ----------------------------
 		while(isRun) {
