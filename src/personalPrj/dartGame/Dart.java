@@ -323,7 +323,7 @@ public class Dart {
 			temp = scan.nextLine();
 			
 			if(temp.equals("1"))
-				return temp; //메인 메소드로 돌아감
+				return null; //메인 메소드로 돌아감
 		}
 		
 		
@@ -383,9 +383,9 @@ public class Dart {
 						fout.println();
 						System.out.printf("%s ", temper[i].name);
 					}
-				System.out.println("기록이 등재되었습니다.");
-				isRun = false;
-				continue;
+				System.out.println("기록이 등재되었습니다."); 
+				return null;
+
 				}
 				
 				for(int i=0; i<tokens.length; i++) {
