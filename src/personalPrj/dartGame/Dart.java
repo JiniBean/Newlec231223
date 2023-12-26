@@ -442,6 +442,8 @@ public class Dart {
 				dp[i].tirdScore = Integer.parseInt(tokens[3]);
 				dp[i].totalScore = Integer.parseInt(tokens[4]);
 			}
+			fscan.close();
+			fis.close();
 		}
 		
 		//점수 순으로 정렬하기
@@ -461,8 +463,8 @@ public class Dart {
 					}
 				}
 			
-			for(int i=0, s=1; i<count; s++, s++)
-				System.out.printf("\n%d. %s  %d점\n ", s, dp[s].name, dp[s].totalScore);
+			for(int i=0, s=1; i<count; s++, i++)
+				System.out.printf("\n%d. %s  %d점\n ", s, dp[i].name, dp[i].totalScore);
 		}
 	}
 }

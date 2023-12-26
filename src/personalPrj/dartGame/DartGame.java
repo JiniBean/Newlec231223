@@ -15,7 +15,7 @@ public class DartGame {
 		
 //		--- 메뉴 선택 -------------------------
 		
-//		dart.showTheHall();
+		dart.showTheHall();
 		
 //		--- 인트로 ----------------------------
 		
