@@ -59,22 +59,49 @@ public class Dart {
 				+ "                                                               ( )         ( )  ");
 	}
 	
-//	public int menuList() {
-//		Scanner scan = new Scanner(System.in);
-//		
-//		System.out.println("┌─────────────────────────────┐");
-//		System.out.println("│          메뉴 선택          │");
-//		System.out.println("└─────────────────────────────┘");
-//		System.out.println("1. 명예의 전당");
-//		System.out.println("2. 게임 설명");
-//		System.out.println("3. 게임 시작");
-//		System.out.println("4. 종료");
-//		System.out.print(">>");
-//		
-//		
-//		
-//		System.out.println();
-//	}
+	public int menuList() {
+		Scanner scan = new Scanner(System.in);
+		int menu = 0;
+		
+		System.out.println("┌─────────────────────────────┐");
+		System.out.println("│          메뉴 선택          │");
+		System.out.println("└─────────────────────────────┘");
+		System.out.println("1. 명예의 전당");
+		System.out.println("2. 게임 설명");
+		System.out.println("3. 게임 시작");
+		System.out.println("4. 종료");
+		
+		boolean run = true;
+		while (run) {
+			
+			System.out.print(">>");
+			
+			
+			//유효성 검사
+			String str =scan.nextLine();
+			
+			boolean isNum = !Character.isDigit(str.charAt(0));//입력값이 숫자가 아닐때
+			
+			if(isNum) {
+				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요. (1부터 4까지의 정수만 입력해주세요)\n");
+				continue;
+			}
+			
+			int temp = Integer.parseInt(str);
+			
+			boolean isRight = !(1<=temp && temp <=4);//1~4가 아닐때
+			if(isRight) {
+				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요. (1부터 4까지의 정수만 입력해주세요)\n");
+				continue;
+			}
+			
+			menu = temp;
+			run=false;
+		}				
+		
+		System.out.println();
+		return menu;
+	}
 
 	public void intro() throws InterruptedException {
 		
@@ -464,7 +491,8 @@ public class Dart {
 				}
 			
 			for(int i=0, s=1; i<count; s++, i++)
-				System.out.printf("\n%d. %s  %d점\n ", s, dp[i].name, dp[i].totalScore);
+				System.out.printf("\n%d. %s  %d점\n", s, dp[i].name, dp[i].totalScore);
+			System.out.println();
 		}
 	}
 }

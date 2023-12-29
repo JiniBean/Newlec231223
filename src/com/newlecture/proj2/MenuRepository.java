@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Scanner;
 
+import kr.co.rland.web.menu.Menu;
+
 public class MenuRepository {
 
 	//overload instance method
@@ -58,6 +60,36 @@ public class MenuRepository {
 		
 		pis.close();
 		stream.close();
+	}
+
+	
+	public Menu findById(int id) throws IOException {
+		FileInputStream stream = new FileInputStream("res/menu.csv");
+		Scanner scan = new Scanner(stream);
+		
+		Menu menu = new Menu();
+		menu.setId(id);
+		
+		//컬럼 버리기
+		if(scan.hasNextLine())
+			scan.nextLine();
+		
+		while(scan.hasNextLine()) {
+			String line = scan.nextLine();
+			String[] tokens = line.split(",");
+			
+			if(menu.getId() == Integer.parseInt(tokens[0])) {
+				menu.setId(Integer.parseInt(tokens[0]));
+				menu.setKorName(tokens[1]);
+				menu.setEngName(tokens[2]);
+				menu.setPrice(Integer.parseInt(tokens[3]));
+				menu.setImg(tokens[4]);
+			}
+		}
+		
+		scan.close();
+		stream.close();
+		return menu;
 	}
 
 

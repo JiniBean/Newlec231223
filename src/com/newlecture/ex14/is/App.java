@@ -10,12 +10,15 @@ public class App {
 		exam.setKor(100);
 		exam.setCom(90);
 		
-		Exam exam1 = new NewlecExam();
-		exam1.setCom();
+//		Exam exam1 = new NewlecExam();
+//		exam1.setCom();
 		
 		System.out.println(exam.total());
 		System.out.println(exam.avg());
 		System.out.println();
+		
+		PaintFrame win = new PaintFrame();
+		win.setVisible(true);
 	}
 }
 
