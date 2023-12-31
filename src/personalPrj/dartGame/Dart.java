@@ -119,8 +119,8 @@ public class Dart {
 	}
 	
 	//게임 세팅하기
-	public SettingInfo setGame() {
-		SettingInfo info =  new SettingInfo();
+	public PlayerList setGame() {
+		PlayerList info =  new PlayerList();
 		
 		info.numRound = 3; //게임을 3라운드 진행
 		
@@ -147,11 +147,11 @@ public class Dart {
 			run = false;
 			}
 			
-		info.players = new DartPlayer[info.numPlayers];
+		info.players = new Player[info.numPlayers];
 		
 		//입력 받은 수만큼 유저이름 받기
 		for(int i=0; i<info.numPlayers; i++) {
-			DartPlayer temp = new DartPlayer();
+			Player temp = new Player();
 			System.out.printf("\n유저%d의 이름을 정해주세요.\n", i+1);
 			System.out.print(">>");
 			temp.name = sc.nextLine();
@@ -283,7 +283,7 @@ public class Dart {
 	}
 	
 	//총점수 및 등수 출력
-	public SettingInfo scoreCalculate(SettingInfo info) {
+	public PlayerList scoreCalculate(PlayerList info) {
 		
 		for(int p=0; p<info.numPlayers; p++)
 			System.out.printf("%s : %s점  \n\n", info.players[p].name, info.players[p].totalScore);
@@ -300,7 +300,7 @@ public class Dart {
 		}
 		else if(info.numPlayers>2) {
 			
-			DartPlayer rank;
+			Player rank;
 			
 			for(int p=0; p<info.numPlayers-1; p++)
 				for(int i=0; i<info.numPlayers-(1+p); i++) {
@@ -338,7 +338,7 @@ public class Dart {
 	}
 	
 	//명예의 전당에 입력하기
-	public String loadToHall(SettingInfo info) throws IOException {
+	public String loadToHall(PlayerList info) throws IOException {
 		
 		String temp;
 		
@@ -396,7 +396,7 @@ public class Dart {
 				for(int i=0; i<tokens.length; i++)
 					System.out.println( Integer.parseInt(tokens[i])-1);
 				
-				DartPlayer[] temper = new DartPlayer[tokens.length];
+				Player[] temper = new Player[tokens.length];
 				
 				//All인지 확인
 				boolean isAll = false;
@@ -451,7 +451,7 @@ public class Dart {
 			fscan.close();
 			fis.close();
 		}
-		DartPlayer[] dp = new DartPlayer[count];
+		Player[] dp = new Player[count];
 		{
 			FileInputStream fis = new FileInputStream("res/HallOfFame.txt");
 			Scanner fscan = new Scanner(fis);
@@ -462,7 +462,7 @@ public class Dart {
 				String line = fscan.nextLine();
 				String[] tokens = line.split(",");
 				
-				dp[i] = new DartPlayer();
+				dp[i] = new Player();
 				dp[i].name = tokens[0];
 				dp[i].firstScore = Integer.parseInt(tokens[1]);
 				dp[i].secondScore = Integer.parseInt(tokens[2]);
@@ -475,7 +475,7 @@ public class Dart {
 		
 		//점수 순으로 정렬하기
 		{
-			DartPlayer rank;
+			Player rank;
 			
 			for(int p=0; p<count-1; p++)
 				for(int i=0; i<count-(1+p); i++) {

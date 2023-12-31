@@ -31,7 +31,7 @@ public class DartGame {
 				
 //		--- 게임 진행 ----------------------------
 				//게임 세팅 
-				SettingInfo info = dart.setGame();
+				PlayerList info = dart.setGame();
 				System.out.println(info.numPlayers);
 				System.out.println(info.numRound);
 				
