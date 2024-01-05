@@ -1,4 +1,3 @@
-package com.newlecture.study.market;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -42,6 +41,8 @@ public class ProductRepository {
 		
 		return list;
 	}
+	
+	
 	
 	
 	public void save(Product product) throws IOException {
