@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-import kr.co.rland.web.menu.Menu;
 
 public class MenuRepository {
 
