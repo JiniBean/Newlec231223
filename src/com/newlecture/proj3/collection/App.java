@@ -34,11 +34,21 @@ public class App {
 			set.add(3);
 //			System.out.println(set.size());
 			
-			Iterator it = set.iterator();
+//			Iterator it = set.iterator();
 			
-			while (it.hasNext())
-				System.out.println(it.next());
+//			while (it.hasNext())
+//				System.out.println(it.next());
 			
+			for(Integer n : set) //자동 언박싱 과정이 일어남
+				System.out.println("이터레이터: "+ n);
+			
+			int[] m = {0,1,2,3,4,5};
+			for(int i : m)
+				System.out.println("배열"+ i);
+			
+			char[] c = {'a', 'b','c'};
+			for(char a :c)
+				System.out.println("캐릭터 배열" + a);
 		}
 	
 		{
