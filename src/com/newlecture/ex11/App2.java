@@ -134,7 +134,7 @@ public class App2 {
 				pis.println();
 			}
 			run = false;
-		}-
+		}
 	}
 	
 	
